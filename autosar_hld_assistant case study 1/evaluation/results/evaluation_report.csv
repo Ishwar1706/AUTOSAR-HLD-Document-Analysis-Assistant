@@ -1,0 +1,26 @@
+id,question,type,status,retrieval_recall,groundedness_score,num_sources,latency_seconds
+Q001,What signals does SWC_DoorLockControl use?,signal,success,0.5,1.0,6,1.398
+Q002,What is the functional flow for contactor closing in the BMS?,functional_flow,success,1.0,0.6,6,1.573
+Q003,What are the main software components of the BCM architecture?,component,success,1.0,1.0,6,0.887
+Q004,What interfaces are used by the ADAS FCW system?,interface,success,1.0,1.0,6,2.445
+Q005,What is the responsibility of SWC_CollisionRiskEstimator?,component,success,1.0,0.3333,6,20.628
+Q006,What are the dependencies of SWC_WindowLiftSupervisor?,dependency,success,0.0,0.0,6,14.323
+Q007,What data type is the CellVoltageValidated signal?,signal,success,1.0,1.0,6,17.121
+Q008,What ECU is SWC_CellBalancingController mapped to?,component,success,1.0,1.0,6,13.437
+Q009,What changed between BMS v1.0 and v1.1?,comparison,success,1.0,1.0,6,16.557
+Q010,What are the open points in the BCM HLD?,general,success,1.0,0.0,6,9.419
+Q011,What is the range of the AmbientLightLevel signal?,signal,success,1.0,1.0,6,20.075
+Q012,Which component depends on SWC_CellVoltageMonitor in the BMS?,dependency,success,1.0,1.0,6,15.817
+Q013,What is the purpose of CSPort_DiagnosticService in the BCM?,interface,success,1.0,0.5,6,15.721
+Q014,What ASIL level is allocated to the FCW function?,safety,success,1.0,0.0,6,14.268
+Q015,How many cells does the BMS pack configuration assume?,general,success,1.0,1.0,6,10.086
+Q016,What triggers the welcome lighting in the BCM?,functional_flow,success,1.0,1.0,6,18.829
+Q017,What is the cycle time of SWC_SensorFusion output?,general,success,1.0,0.0,6,17.311
+Q018,What is the engine oil pressure sensor calibration value in the BCM?,negative,success,1.0,1.0,6,20.785
+Q019,What CAN protocol version is used by the ADAS FCW system?,negative,success,1.0,1.0,6,9.116
+Q020,What is the maximum charging current for the BMS?,negative,success,1.0,1.0,6,11.228
+Q021,What is the SoH estimation approach used in the BMS?,component,success,1.0,0.5,6,16.407
+Q022,What does SWC_WiperControl depend on?,dependency,success,0.0,0.0,6,14.931
+Q023,What is the PinchDetected signal used for?,signal,success,1.0,0.5,6,13.979
+Q024,What is the BalancingCmd signal data type and range?,signal,success,1.0,1.0,6,14.388
+Q025,Which component checks DriverOverrideState before issuing a warning?,functional_flow,success,1.0,1.0,6,16.47
