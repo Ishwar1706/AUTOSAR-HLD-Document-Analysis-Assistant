@@ -1,0 +1,28 @@
+{
+  "document": "AUTOSAR_EnergyManagement_Scanned_HLD_v1.0.pdf",
+  "sha256": "224dba28bc88d85fdbd55f34a0b446ae354d62b4a6f2cc8b999430aba08eac7d",
+  "pages": 2,
+  "native_pages": 0,
+  "ocr_pages": 2,
+  "chunks_added": 0,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "Synthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This documents fictional, independently created for academic evaluation, and contains no confidential CEM data \u2018or\nreproduced AUTOSAR standard text. .\n~~\nDocument ID \u201cSYN-HLD-EM-O0L.\nClassification | Synthetic academic test data\nRAG, OCR, extraction, comparison, and evaluation\u2019\n. Authority\u201d | _Not valid for production design or vehicle release\u2019\nSYNTHETIC. TRAINING DATA | AutoHLD Insight. Page 1",
+      "method": "ocr",
+      "ocr_confidence": 82.4,
+      "quality": 0.983,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "1. Scanned component supplement.\nThis document intentionally contains image-only pages to validate automatic OCR routing. It defines the synthetic,\nEnergyManagementCcordinator component.\n2. Component definition.\nComponent | EnergyManagementCoordinator\n3. Data elements\n4. Behaviour\nEnergyManagementCoordinator shall publish CONSERVATION when BatteryStateCfCharge_pct is below 25%. It\nShall publish CRITICAL when BatteryStateOfCharge_pct is below 15% or when If_BatteryState.is stale for more than\n500 ms..\n5. OCR-specific evaluation statement\nExpecied OCR phrase: EnergyManagementCoordinator publishes If_EnergyMade.every 100 ms. This exact sentence is\nincluded to support deterministic OCR accuracy testing.\n6. Known missing definition\nif_BatteryState is intentionally referenced but not defined in the remaining synthetic documents. The system:shoutd\nflag it as a missing interface definition.\nSYNTHETIC. TRAINING DATA | AutoHLO insight. Page 2",
+      "method": "ocr",
+      "ocr_confidence": 88.65,
+      "quality": 0.983,
+      "section": "500 ms..",
+      "warning": null
+    }
+  ]
+}

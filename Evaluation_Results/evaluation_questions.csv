@@ -1,0 +1,4 @@
+id,question,expected_answer_keyword,expected_document,type
+Q001,Which component provides If_EnergyMode?,EnergyManagementCoordinator,AUTOSAR_EnergyManagement_Scanned_HLD_v1.0.pdf,ocr
+Q002,Which component provides If_VehicleSpeed?,VehicleStateManager,AUTOSAR_Powertrain_HLD_v1.0.pdf,factual
+Q003,What changed in vehicle speed timing?,10 ms,AUTOSAR_Powertrain_HLD_v1.1.pdf,revision

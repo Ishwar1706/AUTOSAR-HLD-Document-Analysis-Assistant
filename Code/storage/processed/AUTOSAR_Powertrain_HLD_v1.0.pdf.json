@@ -1,0 +1,46 @@
+{
+  "document": "AUTOSAR_Powertrain_HLD_v1.0.pdf",
+  "sha256": "a011a0f71d4a2eab4b00f659333c74668390e93c8ff306a8316d8f429e6cabf0",
+  "pages": 4,
+  "native_pages": 4,
+  "ocr_pages": 0,
+  "chunks_added": 7,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 1\nPowertrain Control HLD\nSynthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This document is fictional, independently created for academic evaluation, and contains no confidential OEM data or\nreproduced AUTOSAR standard text.\nField\nValue\nDocument ID\nSYN-HLD-PT-001\nVersion\n1.0\nStatus\nApproved synthetic baseline\nClassification\nSynthetic academic test data\nIntended use\nRAG, OCR, extraction, comparison, and evaluation\nAuthority\nNot valid for production design or vehicle release",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.965,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 2\n1. Purpose and system context\nThe synthetic powertrain control architecture coordinates driver demand, vehicle motion, engine state, torque\narbitration, and thermal protection. The document is designed to support entity extraction, relationship mapping, cited\nquestion answering, and deterministic completeness checks.\n1.1 Operational boundary\nThe logical boundary includes application software components only. Hardware drivers, operating-system internals,\ncalibration implementation, and production safety approval are outside the synthetic model.\n2. Software component catalogue\nComponent ID\nSoftware Component\nResponsibility\nProvided Interface\nRequired Interface\nSWC-PT-001\nEngineControlCoordinato\nr\nCoordinates torque and engine\noperating states\nIf_EngineState\nIf_VehicleSpeed,\nIf_PedalPosition\nSWC-PT-002\nVehicleStateManager\nPublishes normalized vehicle speed\nand motion state\nIf_VehicleSpeed\nIf_WheelSpeedRaw\nSWC-PT-003\nPedalPositionAdapter\nValidates accelerator pedal channels\nIf_PedalPosition\nIf_AdcPedal\nSWC-PT-004\nTorqueArbitrator\nCombines driver and supervisory\ntorque requests\nIf_TorqueRequest\nIf_PedalPosition,\nIf_EngineState\nSWC-PT-005\nThermalProtectionManag\ner\nApplies torque derating from\ntemperature\nIf_ThermalLimit\nIf_CoolantTemperature",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.964,
+      "section": "1.1 Operational boundary",
+      "warning": null
+    },
+    {
+      "page": 3,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 3\n3. Interface catalogue\nInterface ID\nInterface Name\nType\nProvider\nConsumers\nKey Data Elements\nIF-001\nIf_VehicleSpeed\nSender-Receiver\nVehicleStateManager\nEngineControlCoordinator,\nCruiseControlManager\nVehicleSpeed_kph,\nMotionState\nIF-002\nIf_PedalPosition\nSender-Receiver\nPedalPositionAdapter\nEngineControlCoordinator,\nTorqueArbitrator\nPedalPosition_pct,\nPedalValidity\nIF-003\nIf_EngineState\nSender-Receiver\nEngineControlCoordin\nator\nTorqueArbitrator,\nDiagnosticEventManager\nEngineRunning,\nEngineSpeed_rpm\nIF-004\nIf_TorqueRequest\nClient-Server\nTorqueArbitrator\nEngineControlCoordinator\nRequestedTorque_Nm,\nRequestSource\nIF-005\nIf_ThermalLimit\nSender-Receiver\nThermalProtectionMan\nager\nEngineControlCoordinator\nMaximumTorque_Nm,\nDeratingReason\n4. Port mapping\nPort ID\nComponent\nPort\nDirection\nInterface\nMultiplicity\nPORT-001\nVehicleStateManager\nPpVehicleSpeed\nProvided\nIf_VehicleSpeed\n1\nPORT-002\nEngineControlCoordinator\nRpVehicleSpeed\nRequired\nIf_VehicleSpeed\n1\nPORT-003\nPedalPositionAdapter\nPpPedalPosition\nProvided\nIf_PedalPosition\n1\nPORT-004\nTorqueArbitrator\nRpPedalPosition\nRequired\nIf_PedalPosition\n1\nPORT-005\nEngineControlCoordinator\nPpEngineState\nProvided\nIf_EngineState\n1\nPORT-006\nEngineControlCoordinator\nRpTorqueRequest\nRequired\nIf_TorqueRequest\n1\n5. Functional flows\n5.1 Driver torque request flow\nPedalPositionAdapter validates two synthetic pedal channels and publishes PedalPosition_pct through\nIf_PedalPosition. TorqueArbitrator consumes the value, considers EngineRunning from If_EngineState, and exposes\nRequestedTorque_Nm through If_TorqueRequest. EngineControlCoordinator consumes the request and applies the\npermitted torque.\n5.2 Vehicle-speed flow\nVehicleStateManager receives WheelSpeedRaw, calculates VehicleSpeed_kph, and publishes it every 20 ms through\nPpVehicleSpeed. EngineControlCoordinator consumes the signal at RpVehicleSpeed for torque coordination.\n5.3 Thermal limitation flow\nThermalProtectionManager publishes MaximumTorque_Nm and DeratingReason through If_ThermalLimit.\nEngineControlCoordinator limits the requested torque whenever the thermal limit is lower than RequestedTorque_Nm.\n6. Timing and quality constraints",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.953,
+      "section": "5.1 Driver torque request flow",
+      "warning": null
+    },
+    {
+      "page": 4,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 4\nItem\nRequirement\nVehicle speed publication\n20 ms nominal; stale after 100 ms\nPedal position publication\n10 ms nominal; invalid on channel disagreement\nTorque request service\nResponse within 15 ms\nThermal limit publication\n100 ms nominal\nInvalid input behaviour\nUse last valid value for one cycle, then enter degraded mode\n7. Assumptions and limitations\nAll names and values are synthetic. A matching provided port is expected for every required port. Consumers must not\ninfer relationships that are absent from this document.",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.972,
+      "section": "20 ms nominal; stale after 100 ms",
+      "warning": null
+    }
+  ]
+}

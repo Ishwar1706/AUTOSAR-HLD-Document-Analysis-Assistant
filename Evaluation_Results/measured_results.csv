@@ -1,0 +1,4 @@
+﻿id,question,expected_answer_keyword,expected_document,type,actual_answer,response_mode,keyword_correct,expected_document_cited,latency_seconds
+Q001,Which component provides If_EnergyMode?,EnergyManagementCoordinator,AUTOSAR_EnergyManagement_Scanned_HLD_v1.0.pdf,ocr,Insufficient evidence found in the selected HLD documents.,insufficient_evidence,False,True,28.511
+Q002,Which component provides If_VehicleSpeed?,VehicleStateManager,AUTOSAR_Powertrain_HLD_v1.0.pdf,factual,The **VehicleStateManager** component provides the `If_VehicleSpeed` interface【2】.,llm_grounded,True,True,1.893
+Q003,What changed in vehicle speed timing?,10 ms,AUTOSAR_Powertrain_HLD_v1.1.pdf,revision,The vehicle‑speed publication interval was halved. In the original baseline (v1.0) the speed was published every 20 ms【3†L5-L7】. In the updated revision (v1.1) the publication interval was changed to every 10 ms【1†L9-L11】【4†L5-L7】.,llm_grounded,False,True,1.86

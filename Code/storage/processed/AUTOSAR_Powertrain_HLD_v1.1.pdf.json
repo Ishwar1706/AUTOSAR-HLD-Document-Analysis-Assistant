@@ -1,0 +1,37 @@
+{
+  "document": "AUTOSAR_Powertrain_HLD_v1.1.pdf",
+  "sha256": "40eb5a2d4c8f86e555347a91b16f89f7cafaa24a53f1d6b1fc4e26adaf0fc59d",
+  "pages": 3,
+  "native_pages": 3,
+  "ocr_pages": 0,
+  "chunks_added": 6,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 1\nPowertrain Control HLD\nSynthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This document is fictional, independently created for academic evaluation, and contains no confidential OEM data or\nreproduced AUTOSAR standard text.\nField\nValue\nDocument ID\nSYN-HLD-PT-001\nVersion\n1.1\nStatus\nSynthetic review candidate\nClassification\nSynthetic academic test data\nIntended use\nRAG, OCR, extraction, comparison, and evaluation\nAuthority\nNot valid for production design or vehicle release",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.965,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 2\n1. Revision purpose\nVersion 1.1 updates the synthetic powertrain baseline to introduce cruise control integration, renamed thermal\nterminology, and revised timing. It is intended for revision-comparison testing.\n2. Change record\nChange ID\nChange type\nAffected item\nDescription\nCHG-101\nAdded\nCruiseControlManager\nNew component provides If_CruiseTorqueDemand\nCHG-102\nModified\nIf_ThermalLimit\nData element DeratingReason renamed\nThermalLimitReason\nCHG-103\nModified\nVehicle speed timing\nPublication changed from 20 ms to 10 ms\nCHG-104\nRemoved\nDiagnosticEventManager\nconsumer\nRemoved from If_EngineState consumer list\nCHG-105\nModified\nTorqueArbitrator\nNow requires If_CruiseTorqueDemand\n3. Updated component catalogue\nComponent ID\nSoftware Component\nResponsibility\nProvided Interface\nRequired Interface\nSWC-PT-001\nEngineControlCoordinato\nr\nCoordinates torque and engine\noperating states\nIf_EngineState\nIf_VehicleSpeed,\nIf_PedalPosition\nSWC-PT-002\nVehicleStateManager\nPublishes normalized vehicle speed\nand motion state\nIf_VehicleSpeed\nIf_WheelSpeedRaw\nSWC-PT-003\nPedalPositionAdapter\nValidates accelerator pedal channels\nIf_PedalPosition\nIf_AdcPedal\nSWC-PT-004\nTorqueArbitrator\nCombines driver and supervisory\ntorque requests\nIf_TorqueRequest\nIf_PedalPosition,\nIf_EngineState\nSWC-PT-005\nThermalProtectionManag\ner\nApplies torque derating from\ntemperature\nIf_ThermalLimit\nIf_CoolantTemperature\nSWC-PT-006\nCruiseControlManager\nGenerates supervised cruise torque\ndemand\nIf_CruiseTorqueDemand\nIf_VehicleSpeed,\nIf_DriverOverride",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.951,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 3,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 3\n4. Updated interfaces\nInterface ID\nInterface Name\nType\nProvider\nConsumers\nKey Data Elements\nIF-001\nIf_VehicleSpeed\nSender-Receiver\nVehicleStateManager\nEngineControlCoordinator,\nCruiseControlManager\nVehicleSpeed_kph,\nMotionState\nIF-002\nIf_PedalPosition\nSender-Receiver\nPedalPositionAdapter\nEngineControlCoordinator,\nTorqueArbitrator\nPedalPosition_pct,\nPedalValidity\nIF-003\nIf_EngineState\nSender-Receiver\nEngineControlCoordin\nator\nTorqueArbitrator\nEngineRunning,\nEngineSpeed_rpm\nIF-004\nIf_TorqueRequest\nClient-Server\nTorqueArbitrator\nEngineControlCoordinator\nRequestedTorque_Nm,\nRequestSource\nIF-005\nIf_ThermalLimit\nSender-Receiver\nThermalProtectionMan\nager\nEngineControlCoordinator\nMaximumTorque_Nm,\nThermalLimitReason\nIF-006\nIf_CruiseTorqueDe\nmand\nSender-Receiver\nCruiseControlManager\nTorqueArbitrator\nCruiseTorque_Nm, CruiseState\n5. Updated behaviour\nVehicleStateManager publishes VehicleSpeed_kph every 10 ms. CruiseControlManager consumes vehicle speed and\nproduces CruiseTorque_Nm. TorqueArbitrator selects between driver demand and cruise demand according to\nCruiseState and driver override.\n6. Known review observation\nThe input If_DriverOverride is referenced by CruiseControlManager but is intentionally not defined in this revision. This\ncontrolled defect is included for completeness-check evaluation.\n7. Approval note\nThis is a synthetic revision comparison artifact. It shall not be treated as an authoritative vehicle architecture.",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.958,
+      "section": "Unknown section",
+      "warning": null
+    }
+  ]
+}

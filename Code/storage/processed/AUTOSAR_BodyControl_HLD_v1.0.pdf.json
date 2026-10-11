@@ -1,0 +1,37 @@
+{
+  "document": "AUTOSAR_BodyControl_HLD_v1.0.pdf",
+  "sha256": "ae454674a4e1bf12574aa03cc196049c7e593eff4fefe088de5be8f96d8e86dd",
+  "pages": 3,
+  "native_pages": 3,
+  "ocr_pages": 0,
+  "chunks_added": 5,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 1\nBody Control HLD\nSynthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This document is fictional, independently created for academic evaluation, and contains no confidential OEM data or\nreproduced AUTOSAR standard text.\nField\nValue\nDocument ID\nSYN-HLD-BC-001\nVersion\n1.0\nStatus\nApproved synthetic baseline\nClassification\nSynthetic academic test data\nIntended use\nRAG, OCR, extraction, comparison, and evaluation\nAuthority\nNot valid for production design or vehicle release",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.965,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 2\n1. Body control overview\nThe body control domain coordinates exterior lighting, door status, central locking, wiper control, and cabin\nillumination.\n2. Component inventory\nID\nComponent\nRole\nProvides\nRequires\nSWC-BC-00\n1\nExteriorLightingManager\nControls headlamp and indicator\nrequests\nIf_LightingStatus\nIf_LightSwitch,\nIf_VehicleSpeed\nSWC-BC-00\n2\nDoorStateManager\nAggregates four door-ajar inputs\nIf_DoorState\nIf_DoorSensors\nSWC-BC-00\n3\nCentralLockingManager\nCommands lock actuators and\nreports status\nIf_LockStatus\nIf_DoorState,\nIf_LockRequest\nSWC-BC-00\n4\nWiperControlManager\nSelects wipe state and interval\nIf_WiperStatus\nIf_WiperSwitch, If_RainLevel\nSWC-BC-00\n5\nCabinLightingManager\nControls courtesy lighting\nIf_CabinLightStatus\nIf_DoorState,\nIf_AmbientLight",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.945,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 3,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 3\n3. Signals and validity\nSignal\nSource component\nInterface\nRange / states\nInvalid behaviour\nDoorAjar_FL\nDoorStateManager\nIf_DoorState\nOPEN/CLOSED/UNKNOWN\nPublish UNKNOWN\nAllDoorsClosed\nDoorStateManager\nIf_DoorState\nTRUE/FALSE\nFALSE after timeout\nLockState\nCentralLockingManager\nIf_LockStatus\nLOCKED/UNLOCKED/TRANSI\nTION\nTRANSITION for max 2 s\nWiperState\nWiperControlManager\nIf_WiperStatus\nOFF/INT/LOW/HIGH\nOFF\nCabinLightLevel_pct\nCabinLightingManager\nIf_CabinLightStatus\n0..100\n20% fallback\n4. Functional relationships\nDoorStateManager publishes If_DoorState to CentralLockingManager and CabinLightingManager.\nCentralLockingManager inhibits auto-lock when any door state is OPEN or UNKNOWN. CabinLightingManager\ncommands 100% courtesy lighting when a door transitions from CLOSED to OPEN.\n5. Controlled inconsistency\nThe component is named CabinLightingManager in the component inventory but is intentionally called CabinLightManager in the\nmaintenance note below. The mismatch is included for terminology-consistency evaluation.\n5.1 Maintenance note\nCabinLightManager shall be inspected when CabinLightLevel_pct remains above 20% for more than 60 seconds after\nall doors are closed.\n6. Review limitations\nNo physical pin mapping or network frame mapping is represented. Findings require engineer review.",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.967,
+      "section": "5.1 Maintenance note",
+      "warning": null
+    }
+  ]
+}

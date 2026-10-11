@@ -1,0 +1,28 @@
+{
+  "document": "AUTOSAR_Interface_Catalogue_v1.0.pdf",
+  "sha256": "c50521445b5f9d5e26f0357b423d83044641b1a0ba7e4de99df669e145427530",
+  "pages": 2,
+  "native_pages": 2,
+  "ocr_pages": 0,
+  "chunks_added": 4,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 1\nCross-Domain Interface Catalogue\nSynthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This document is fictional, independently created for academic evaluation, and contains no confidential OEM data or\nreproduced AUTOSAR standard text.\nField\nValue\nDocument ID\nSYN-CAT-IF-001\nVersion\n1.0\nStatus\nApproved synthetic reference\nClassification\nSynthetic academic test data\nIntended use\nRAG, OCR, extraction, comparison, and evaluation\nAuthority\nNot valid for production design or vehicle release",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.966,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 2\n1. Interface naming rules\nInterface names use the prefix If_. Provided ports use Pp and required ports use Rp. Data-element names use\ndescriptive CamelCase names followed by a unit suffix when a numeric unit is applicable.\n2. Cross-domain interface catalogue\nInterface\nType\nProvider domain\nData elements\nNominal cycle\nIf_VehicleSpeed\nSender-Receiver\nPowertrain\nVehicleSpeed_kph, MotionState\n10 or 20 ms by\nrevision\nIf_EngineState\nSender-Receiver\nPowertrain\nEngineRunning, EngineSpeed_rpm\n20 ms\nIf_DoorState\nSender-Receiver\nBody Control\nDoorAjar_FL, AllDoorsClosed\n50 ms\nIf_LockStatus\nSender-Receiver\nBody Control\nLockState\n100 ms\nIf_EventStatus\nSender-Receiver\nDiagnostics\nEventId, EventStatus\nOn change\nIf_FreezeFrame\nClient-Server\nDiagnostics\nSnapshotId, SnapshotPayload\nOn request\n3. Relationship constraints\nEvery required port shall reference a declared interface. Each sender-receiver interface shall have exactly one logical\nprovider in this synthetic architecture. A provided port may have zero or more consumers, but unused interfaces shall\nbe reported for review.\n4. Source precedence\nPriority\nSource type\nRule\n1\nApproved revision-specific HLD\nOverrides older revisions for the same project\n2\nApproved interface catalogue\nUsed when the HLD does not redefine the interface\n3\nComponent catalogue\nProvides identity and ownership\n4\nReview candidate\nMay be queried but must be visibly marked as unapproved\n5. Citation requirement\nAnswers shall cite the source file, page number, and section. If evidence is absent, the system shall return insufficient\nevidence rather than infer a relationship.\n6. Controlled duplicate\nIf_VehicleSpeed appears in both revision-specific HLDs. This is valid across versions and must not be treated as a\nsame-version duplicate when the document version filter is applied.",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.964,
+      "section": "10 or 20 ms by",
+      "warning": null
+    }
+  ]
+}

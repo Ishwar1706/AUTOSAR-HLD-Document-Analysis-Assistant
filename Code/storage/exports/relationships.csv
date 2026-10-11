@@ -1,0 +1,6 @@
+﻿id,document_id,source,target,relation_type,interface,page,evidence,confidence,review_status
+1,1,CabinLightingManager,If_DoorState,PUBLISHES,If_DoorState,3,CabinLightingManager If_CabinLightStatus 0..100 20% fallback 4. Functional relationships DoorStateManager publishes If_DoorState,0.8,UNREVIEWED
+2,3,EnergyManagementCoordinator,If_EnergyMade,PUBLISHES,If_EnergyMade,2,EnergyManagementCoordinator publishes If_EnergyMade,0.8,UNREVIEWED
+3,5,PedalPositionAdapter,If_PedalPosition,PUBLISHES,If_PedalPosition,3,PedalPositionAdapter validates two synthetic pedal channels and publishes PedalPosition_pct through If_PedalPosition,0.8,UNREVIEWED
+4,6,CruiseControlManager,If_CruiseTorqueDemand,PROVIDES,If_CruiseTorqueDemand,2,CruiseControlManager New component provides If_CruiseTorqueDemand,0.8,UNREVIEWED
+5,6,DiagnosticEventManager,If_CruiseTorqueDemand,REQUIRES,If_CruiseTorqueDemand,2,DiagnosticEventManager consumer Removed from If_EngineState consumer list CHG-105 Modified TorqueArbitrator Now requires If_CruiseTorqueDemand,0.8,UNREVIEWED

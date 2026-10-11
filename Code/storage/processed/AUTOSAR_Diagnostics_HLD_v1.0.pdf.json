@@ -1,0 +1,37 @@
+{
+  "document": "AUTOSAR_Diagnostics_HLD_v1.0.pdf",
+  "sha256": "0d6a9c1bdd6e717e3dcfc329a5af254979be46fea9a48156ed2284b7529f2598",
+  "pages": 3,
+  "native_pages": 3,
+  "ocr_pages": 0,
+  "chunks_added": 5,
+  "page_details": [
+    {
+      "page": 1,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 1\nDiagnostics and Event Management HLD\nSynthetic AUTOSAR-inspired High-Level Design Knowledge Document\nImportant: This document is fictional, independently created for academic evaluation, and contains no confidential OEM data or\nreproduced AUTOSAR standard text.\nField\nValue\nDocument ID\nSYN-HLD-DG-001\nVersion\n1.0\nStatus\nApproved synthetic baseline\nClassification\nSynthetic academic test data\nIntended use\nRAG, OCR, extraction, comparison, and evaluation\nAuthority\nNot valid for production design or vehicle release",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.966,
+      "section": "Unknown section",
+      "warning": null
+    },
+    {
+      "page": 2,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 2\n1. Diagnostic architecture\nThe synthetic diagnostics domain collects application events, stores event state, and provides diagnostic snapshots to\nan external diagnostic transport adapter.\n2. Components\nID\nComponent\nProvides\nRequires\nMain responsibility\nSWC-DG-001\nDiagnosticEventManager\nIf_EventStatus\nIf_EngineState, If_LockStatus\nDebounces and classifies events\nSWC-DG-002\nFreezeFrameCollector\nIf_FreezeFrame\nIf_EventStatus, If_VehicleSpeed\nCaptures contextual values\nSWC-DG-003\nDiagnosticDataRouter\nIf_DiagnosticData\nIf_EventStatus, If_FreezeFrame\nRoutes approved diagnostic\nrecords\nSWC-DG-004\nHealthMonitor\nIf_HealthStatus\nIf_TaskHeartbeat\nDetects stale application tasks\n3. Event catalogue\nEvent ID\nEvent name\nSet condition\nClear condition\nSnapshot fields\nEVT-001\nVehicleSpeedInvalid\nVehicle speed invalid for 500 ms\nValid for 2 s\nVehicleSpeed_kph, MotionSt\nEVT-002\nPedalChannelMismatch\nPedal channel delta exceeds 8% for\n100 ms\nDelta below 3% for 1 s\nPedalPosition_pct, PedalVal\nEVT-003\nDoorStateTimeout\nDoor state absent for 1 s\nThree valid updates\nDoor states, LockState\nEVT-004\nThermalDeratingActive\nMaximumTorque_Nm below 60% of\nrequest\nLimit above 80% for 5 s\nRequestedTorque_Nm,\nMaximumTorque_Nm",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.952,
+      "section": "100 ms",
+      "warning": null
+    },
+    {
+      "page": 3,
+      "text": "SYNTHETIC TRAINING DATA | AutoHLD Insight\nPage 3\n4. Dependency rules\nFreezeFrameCollector shall only capture values explicitly listed in the event catalogue. DiagnosticDataRouter shall not\ncreate application relationships that are not present in approved HLD evidence.\n5. Intentional orphan reference\nEvent EVT-005, BatteryVoltageLow, references signal BatteryVoltage_V. No component or interface providing BatteryVoltage_V\nis defined in this knowledge pack. This controlled defect is used for missing-dependency evaluation.\n6. Audit fields\nField\nDescription\nevent_timestamp\nUTC timestamp of the qualified event\nevent_status\nPENDING, CONFIRMED, or CLEARED\nsource_component\nComponent that reported the condition\nevidence_reference\nDocument, page, and section reference\nreview_status\nUNREVIEWED, ACCEPTED, or REJECTED",
+      "method": "native",
+      "ocr_confidence": null,
+      "quality": 0.975,
+      "section": "Unknown section",
+      "warning": null
+    }
+  ]
+}
